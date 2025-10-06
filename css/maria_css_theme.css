@@ -1,0 +1,86 @@
+/* ===================================
+   THEME & ACCESSIBILITY
+   =================================== */
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+    
+    .timeline::before {
+        transform: scaleY(1);
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-gray: #3a3228;
+        --warm-beige: #A89080;
+    }
+    
+    .nav-links a::after,
+    .section-header h2::after {
+        height: 3px;
+    }
+    
+    button,
+    a {
+        outline: 2px solid transparent;
+    }
+    
+    button:focus,
+    a:focus {
+        outline: 3px solid currentColor;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-nav,
+    .back-to-top,
+    .theme-toggle,
+    .mobile-toggle,
+    .scroll-progress,
+    .contact-form-wrapper {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .hero {
+        background: #8B9474;
+        padding: 2rem 1rem;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href^="tel:"]:after {
+        content: " (" attr(href) ")";
+    }
+    
+    a[href^="mailto:"]:after {
+        content: " (" attr(href) ")";
+    }
+}

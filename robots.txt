@@ -1,0 +1,17 @@
+# robots.txt for Maria Sarbu Resume Website
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mariasarbu.com/sitemap.xml
+
+# Allow all search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow crawling of assets if needed (optional)
+# Disallow: /assets/private/
